@@ -159,7 +159,6 @@ pa() {
 
 #---------Tinker--------------
 alias pat='pa tinker'
-alias patx='pa tinx'
 alias pam='pa migrate'
 
 #---------Migrations----------
