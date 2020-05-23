@@ -353,8 +353,14 @@ services:
       depends_on:
         - php-fpm
       networks:
-        - frontend
-        - backend
+        frontend:
+          aliases:
+            - api.gateway.local
+            - notification.serv.local
+        backend:
+          aliases:
+            - api.gateway.local
+            - notification.serv.local
 
 ### Blackfire ########################################
     blackfire:

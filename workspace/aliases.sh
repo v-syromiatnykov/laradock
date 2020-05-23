@@ -115,6 +115,99 @@ alias gbr="git branch"
 alias gc="git commit"
 alias gck="git checkout"
 
+
+###############################################################################
+
+alias cl='clear'
+
+# *************************
+#          FILES
+# *************************
+
+alias ll='ls -lh'
+alias la='ls -lAh'
+alias ..='cd ../'
+alias ...='cd ../../'
+
+
+# *************************
+#          GIT
+# *************************
+alias gs='git status'
+alias ga='git add'
+alias gcom='git commit -m'
+alias go='git checkout'
+alias gunst='git reset HEAD'
+alias gup='git remote update origin --prune'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias nah='git reset --hard;git clean -df'
+alias gbget='git fetch && git checkout'
+
+# *************************
+#          ARTISAN
+# *************************
+
+pa() {
+  if [ -f bin/artisan ]; then
+    php bin/artisan "$@"
+  else
+    php artisan "$@"
+  fi
+}
+
+#---------Tinker--------------
+alias pat='pa tinker'
+alias patx='pa tinx'
+alias pam='pa migrate'
+
+#---------Migrations----------
+alias paref='pa migrate:refresh'
+alias pafr='pa migrate:fresh'
+alias pafrseed='pa migrate:fresh --seed'
+
+alias pakey='pa key:generate'
+alias pamk:m='pa make:migration'
+alias pad:s='pa db:seed'
+alias routes='pa route:list'
+
+alias cc='ci && pam && pa cache:clear && pa config:cache && pa route:cache && pa view:cache'
+
+# *************************
+#          PHPUNIT
+# *************************
+
+pu() {
+  if [ -f vendor/bin/phpunit ]; then
+    vendor/bin/phpunit "$@"
+  else
+    phpunit "$@"
+  fi
+}
+
+alias puf='pu --filter'
+
+
+# *************************
+#          COMPOSER
+# *************************
+
+alias ci='composer install'
+alias cu='composer update'
+alias cda='composer dump-autoload'
+
+# *************************
+#          NPM
+# *************************
+alias ni='npm install'
+alias nu='npm update'
+alias nrw='npm run watch'
+alias nrp='npm run prod'
+alias nrd='npm run dev'
+alias ava='node_modules/.bin/ava'
+###############################################################################
+
 # Create a new directory and enter it
 function mkd() {
     mkdir -p "$@" && cd "$@"

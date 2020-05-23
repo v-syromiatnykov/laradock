@@ -18,3 +18,5 @@
 !/.devcontainer/docker-compose.extend-example.yml
 
 .DS_Store
+/workspace/insecure_id_rsa
+/workspace/insecure_id_rsa.pub

@@ -177,6 +177,8 @@ RUN if [ ${COMPOSER_REPO_PACKAGIST} ]; then \
 # Export composer vendor path
 RUN echo "" >> ~/.bashrc && \
     echo 'export PATH="~/.composer/vendor/bin:$PATH"' >> ~/.bashrc
+    
+RUN composer global require hirak/prestissimo --no-plugins --no-scripts
 
 ###########################################################################
 # Non-root user : PHPUnit path
