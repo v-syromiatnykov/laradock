@@ -914,6 +914,11 @@ RUN set -xe; php -v | head -n 1 | grep -q "PHP ${LARADOCK_PHP_VERSION}."
 COPY ./laravel.ini /usr/local/etc/php/conf.d
 COPY ./xlaravel.pool.conf /usr/local/etc/php-fpm.d/
 
+
+#Copy BankId certificate
+COPY ./cert/bankId/test/sc.pem /usr/local/share/ca-certificates/sc.crt
+RUN update-ca-certificates
+
 USER root
 
 # Clean up
