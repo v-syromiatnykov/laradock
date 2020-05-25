@@ -359,10 +359,12 @@ services:
         frontend:
           aliases:
             - api.gateway.local
+            - api.gatewayV2.local
             - notification.serv.local
         backend:
           aliases:
             - api.gateway.local
+            - api.gatewayV2.local
             - notification.serv.local
 
 ### Blackfire ########################################
